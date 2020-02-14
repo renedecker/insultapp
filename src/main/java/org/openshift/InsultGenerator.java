@@ -23,7 +23,7 @@ public class InsultGenerator {
 				Statement stmt = connection.createStatement();
 				ResultSet rs = stmt.executeQuery(SQL);
 
-				while (rs.next()) {
+				while (rs.net()) {
 					if (vowels.indexOf(rs.getString("first").charAt(0)) == -1) {
 						article = "a";
 					}
@@ -37,7 +37,6 @@ public class InsultGenerator {
 		} catch (Exception e) {
 			return "Database connection problem!";
 		}
-		
 		return theInsult;
 	}
 }

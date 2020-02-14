@@ -6,7 +6,7 @@ import java.sql.Statement;
 
 public class InsultGenerator {
 	public String generateInsult() {
-		String vowels = "AEIOU";
+		String vowels = "aeiou";
 		String article = "an";
 		String theInsult = "";
 
@@ -23,7 +23,7 @@ public class InsultGenerator {
 				Statement stmt = connection.createStatement();
 				ResultSet rs = stmt.executeQuery(SQL);
 
-				while (rs.net()) {
+				while (rs.next()) {
 					if (vowels.indexOf(rs.getString("first").charAt(0)) == -1) {
 						article = "a";
 					}
